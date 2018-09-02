@@ -1,13 +1,24 @@
 import Expo from 'expo';
 import React from 'react';
-
+import { Root, StyleProvider } from 'native-base';
 import { Provider } from 'react-redux';
+import AppNavigator from 'navigation/navigators';
 import configureStore from './configureStore';
 
-import colors from 'theme/common';
-import { ThemeProvider } from '@callstack/react-theme-provider';
+import { I18nextProvider, translate } from 'react-i18next';
+import i18n from '../i18n/i18n';
 
-import AppNavigator from 'navigation/navigators';
+import getTheme from '../theme/components';
+import variables from '../theme/variables/platform';
+
+const WrappedStack = ({t}) => {
+  return <AppNavigator screenProps={{ t }} />;
+};
+
+const ReloadAppOnLanguageChange = translate('common', {
+  bindI18n: 'languageChanged',
+  bindStore: false,
+})(WrappedStack);
 
 class Setup extends React.Component {
   constructor() {
@@ -15,12 +26,14 @@ class Setup extends React.Component {
     this.state = {
       isLoading: false,
       store: configureStore(() => this.setState({ isLoading: false })),
-      isReady: false,
+      isReady: false
     };
   }
+
   componentWillMount() {
     this.loadFonts();
   }
+
   async loadFonts() {
     await Expo.Font.loadAsync({
       Roboto: require('native-base/Fonts/Roboto.ttf'),
@@ -31,17 +44,23 @@ class Setup extends React.Component {
     this.setState({ isReady: true });
   }
 
+
   render() {
     if (!this.state.isReady || this.state.isLoading) {
       return <Expo.AppLoading />;
     }
 
     return (
-      <ThemeProvider theme={colors}>
+      <StyleProvider style={getTheme(variables)}>
         <Provider store={this.state.store}>
-          <AppNavigator />
+          <I18nextProvider i18n={ i18n }>
+            {/* Root used for native base toast */}
+            <Root>
+              <ReloadAppOnLanguageChange />
+            </Root>
+          </I18nextProvider>
         </Provider>
-      </ThemeProvider>
+      </StyleProvider>
     );
   }
 }

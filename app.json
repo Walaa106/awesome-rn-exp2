@@ -1,8 +1,15 @@
 {
   "expo": {
-       "name": "mountain",
+    "name": "mountain",
+    "version": "1.0.0",
     "sdkVersion": "27.0.0",
     "icon": "./assets/fav.ico",
-    "slug": "mountain"
+    "slug": "mountain",
+    "ios": {
+      "bundleIdentifier": "com.yamsafer.mountain"
+    },
+    "android": {
+      "package": "com.yamsafer.mountain"
+    }
   }
 }

@@ -11,7 +11,8 @@
         "theme": "./src/theme",
         "utils": "./src/utils",
         "boot": "./src/boot",
-        "reducers": "./src/reducers"
+        "reducers": "./src/reducers",
+        "i18n": "./src/i18n"
       }
     }]
   ]

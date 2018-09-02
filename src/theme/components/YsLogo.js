@@ -23,7 +23,7 @@ const Logo = ({ style, isWhite, height, width }) => {
     <Image
       source={require('../../../assets/svgs/LogoEn.svg')}
       fill={fill}
-      style={{ width: 100, height: 132 }}
+      style={{ width: 90, height: 50 }}
     />
   );
 };

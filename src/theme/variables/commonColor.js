@@ -53,7 +53,7 @@ export default {
   },
 
   get btnPrimaryBg() {
-    return this.brandPrimary;
+    return this.brandInfo;
   },
   get btnPrimaryColor() {
     return this.inverseTextColor;
@@ -109,7 +109,7 @@ export default {
 
   // Color
   brandPrimary: '#2B569F',
-  brandInfo: '#62B1F6',
+  brandInfo: '#2A9DED',
   brandSuccess: '#5cb85c',
   brandDanger: '#d9534f',
   brandWarning: '#f0ad4e',

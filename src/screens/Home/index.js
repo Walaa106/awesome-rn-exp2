@@ -1,7 +1,20 @@
 import React from 'react';
 import styles from './styles';
-import { View } from 'react-native';
-import { Button, Icon, Title } from 'react-native-elements';
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Button,
+  Icon,
+  Left,
+  Body,
+  Right,
+  List,
+  ListItem,
+  Text,
+} from 'native-base';
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,21 +27,21 @@ class Home extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        {/* <Header>
-          <Left> */}
-        <Button transparent onPress={() => this.props.navigation.openDrawer()}>
-          <Icon name="menu" title="Button" />
-        </Button>
-        {/* </Left> */}
-        {/* <Body> */}
-        <Title>Home</Title>
-        {/* </Body> */}
-        {/* <Right /> */}
-        {/* </Header> */}
-        {/* <Content>
+      <Container style={styles.container}>
+        <Header>
+          <Left>
+            <Button transparent onPress={() => this.props.navigation.openDrawer()}>
+              <Icon active name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Home</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
           <List>
-            {this.props.list.map((item, i) => (
+            {this.props.list && this.props.list.map((item, i) => (
               <ListItem
                 key={i}
                 onPress={() =>
@@ -41,8 +54,8 @@ class Home extends React.Component {
               </ListItem>
             ))}
           </List>
-        </Content> */}
-      </View>
+        </Content>
+      </Container>
     );
   }
 }

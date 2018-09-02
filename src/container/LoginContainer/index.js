@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, Input, Icon, Toast, Form } from 'native-base';
+import { Item, Input, Toast, Form, Label } from 'native-base';
 import { Field, reduxForm } from 'redux-form';
 import Login from '../../screens/Login';
 
@@ -21,10 +21,8 @@ class LoginForm extends React.Component {
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
     return (
       <Item error={error && touched}>
-        <Icon active name={input.name === 'email' ? 'person' : 'unlock'} />
         <Input
           ref={c => (this.textInput = c)}
-          placeholder={input.name === 'email' ? 'Email' : 'Password'}
           secureTextEntry={input.name === 'password' ? true : false}
           {...input}
         />
@@ -39,7 +37,8 @@ class LoginForm extends React.Component {
       Toast.show({
         text: 'Enter Valid Username & password!',
         duration: 2000,
-        position: 'top',
+        type: 'danger',
+        position: 'bottom',
         textStyle: { textAlign: 'center' },
       });
     }
@@ -48,12 +47,18 @@ class LoginForm extends React.Component {
   render() {
     const form = (
       <Form>
-        <Field name="email" component={this.renderInput} validate={[email, required]} />
-        <Field
-          name="password"
-          component={this.renderInput}
-          validate={[alphaNumeric, minLength8, maxLength15, required]}
-        />
+        <Item stackedLabel>
+          <Label style={{color: '#fff'}}> Email </Label>
+          <Field name="email" component={this.renderInput} validate={[email, required]} />
+        </Item>
+        <Item stackedLabel last>
+          <Label style={{color: '#fff'}}> PASSWORD </Label>
+          <Field
+            name="password"
+            component={this.renderInput}
+            validate={[alphaNumeric, minLength8, maxLength15, required]}
+          />
+        </Item>
       </Form>
     );
     return (

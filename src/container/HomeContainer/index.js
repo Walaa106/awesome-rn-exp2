@@ -10,7 +10,7 @@ class HomeContainer extends React.Component {
     this.props.fetchList(datas);
   }
   render() {
-    return <Home navigation={this.props.navigation} list={this.props.data} />;
+    return <Home navigation={this.props.navigation} list={["Dashboard", "Reservations", "Property"]} />;
   }
 }
 

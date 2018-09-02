@@ -15,7 +15,7 @@ export default (variables = variable) => {
       'NativeBase.Body': {
         alignSelf: 'flex-end',
         alignItems: 'flex-start',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         paddingBottom: 26,
       },
       'NativeBase.Right': {
@@ -27,13 +27,13 @@ export default (variables = variable) => {
         'NativeBase.Title': {
           fontSize: variables.titleFontSize - 2,
           fontFamily: variables.titleFontfamily,
-          textAlign: 'center',
+          textAlign: 'left',
         },
         'NativeBase.Subtitle': {
           fontSize: variables.subTitleFontSize,
           fontFamily: variables.titleFontfamily,
           color: variables.subtitleColor,
-          textAlign: 'center',
+          textAlign: 'left',
         },
       },
     },
@@ -301,7 +301,7 @@ export default (variables = variable) => {
     backgroundColor: variables.toolbarDefaultBg,
     flexDirection: 'row',
     paddingHorizontal: 10,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     paddingTop: platform === 'ios' ? 15 : 0,
     borderBottomWidth: platform === 'ios' ? 1 / PixelRatio.getPixelSizeForLayoutSize(1) : 0,
     borderBottomColor: variables.toolbarDefaultBorder,

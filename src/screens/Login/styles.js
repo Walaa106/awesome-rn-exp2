@@ -1,9 +1,7 @@
-import EStyleSheet from 'react-native-extended-stylesheet';
+import { StyleSheet } from 'react-native';
 
-const styles = EStyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    backgroundColor: '$brandPrimary',
-    height: '100%',
   },
   logoWrapper: {
     alignSelf: 'stretch',
@@ -13,6 +11,11 @@ const styles = EStyleSheet.create({
     color: 'white',
     fontSize: 25,
   },
+  footer: {
+    flexDirection: "row",
+    flex: 1,
+    justifyContent: 'space-between'
+  }
 });
 
 export default styles;
