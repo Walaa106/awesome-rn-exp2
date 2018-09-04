@@ -11,10 +11,17 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 25,
   },
+  row: {
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'space-between'
+  },
   footer: {
     flexDirection: "row",
     flex: 1,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginTop: 25,
+    paddingLeft: 15
   }
 });
 

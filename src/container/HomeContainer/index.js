@@ -5,12 +5,17 @@ import Home from 'screens/Home';
 import datas from './data';
 import { fetchList } from './actions';
 
+const propTypes = {
+  navigation: PropTypes.object,
+  data: PropTypes.object,
+};
+
 class HomeContainer extends React.Component {
   componentDidMount() {
     this.props.fetchList(datas);
   }
   render() {
-    return <Home navigation={this.props.navigation} list={["Dashboard", "Reservations", "Property"]} />;
+    return <Home navigation={this.props.navigation} list={datas} />;
   }
 }
 
@@ -25,9 +30,6 @@ const mapStateToProps = state => ({
   isLoading: state.homeReducer.isLoading,
 });
 
-HomeContainer.PropTypes = {
-  navigation: PropTypes.object,
-  data: PropTypes.object,
-};
 
+HomeContainer.propTypes = propTypes;
 export default connect(mapStateToProps, bindAction)(HomeContainer);

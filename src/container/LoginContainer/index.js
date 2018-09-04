@@ -1,7 +1,9 @@
 import React from 'react';
-import { Item, Input, Toast, Form, Label } from 'native-base';
+import Login from 'screens/Login';
+import { translate} from 'react-i18next';
 import { Field, reduxForm } from 'redux-form';
-import Login from '../../screens/Login';
+import { Container, Header, Content, Item, Input, Label, Toast, Form, Icon } from 'native-base';
+
 
 const required = value => (value ? undefined : 'Required');
 const maxLength = max => value =>
@@ -20,13 +22,20 @@ const alphaNumeric = value =>
 class LoginForm extends React.Component {
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
     return (
-      <Item error={error && touched}>
-        <Input
-          ref={c => (this.textInput = c)}
-          secureTextEntry={input.name === 'password' ? true : false}
-          {...input}
-        />
-      </Item>
+      <Content>
+        <Item error={error && touched} success={!error && touched}>
+          <Label style={{ fontSize: 12, color: '#fff' }}>
+            { input.name.toUpperCase() }
+          </Label>
+          <Input
+            ref={c => (this.textInput = c)}
+            secureTextEntry={input.name === 'password' ? true : false}
+            {...input}
+          />
+          {error && touched && <Icon name='close-circle' />}
+          {!error && touched && <Icon name='checkmark-circle' />}
+        </Item>
+      </Content>
     );
   }
 
@@ -45,20 +54,15 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     const form = (
       <Form>
-        <Item stackedLabel>
-          <Label style={{color: '#fff'}}> Email </Label>
-          <Field name="email" component={this.renderInput} validate={[email, required]} />
-        </Item>
-        <Item stackedLabel last>
-          <Label style={{color: '#fff'}}> PASSWORD </Label>
-          <Field
-            name="password"
-            component={this.renderInput}
-            validate={[alphaNumeric, minLength8, maxLength15, required]}
-          />
-        </Item>
+        <Field name={t('login:email')} component={this.renderInput} validate={[email, required]} />
+        <Field
+          name={t('login:password')}
+          component={this.renderInput}
+          validate={[alphaNumeric, minLength8, maxLength15, required]}
+        />
       </Form>
     );
     return (
@@ -71,4 +75,4 @@ const LoginContainer = reduxForm({
   form: 'login',
 })(LoginForm);
 
-export default LoginContainer;
+export default translate(['common'], { wait: true })(LoginContainer);

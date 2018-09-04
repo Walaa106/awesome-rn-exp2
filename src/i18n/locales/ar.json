@@ -19,6 +19,10 @@
   },
   "login": {
     "forget-password": "هل نسيت كلمة السر؟",
-    "login": "اذهب"
+    "login": "اذهب",
+    "property-login": "دخول الفنادق",
+    "email": "البريد الالكتروني",
+    "password": "كلمة السر"
+
   }
 }

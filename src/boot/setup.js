@@ -8,8 +8,9 @@ import configureStore from './configureStore';
 import { I18nextProvider, translate } from 'react-i18next';
 import i18n from '../i18n/i18n';
 
-import getTheme from '../theme/components';
-import variables from '../theme/variables/platform';
+import getTheme from 'theme/components';
+import variables from 'theme/variables/platform';
+
 
 const WrappedStack = ({t}) => {
   return <AppNavigator screenProps={{ t }} />;

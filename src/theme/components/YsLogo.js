@@ -21,9 +21,9 @@ const Logo = ({ style, isWhite, height, width }) => {
 
   return (
     <Image
-      source={require('../../../assets/svgs/LogoEn.svg')}
+      source={require('assets/svgs/LogoEn.svg')}
       fill={fill}
-      style={{ width: 90, height: 50 }}
+      style={{ width: 110, height: 60 }}
     />
   );
 };
