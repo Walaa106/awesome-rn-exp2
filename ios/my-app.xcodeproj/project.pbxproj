@@ -54,6 +54,7 @@
 		ABC4D9A013354247A494B7FD /* RNI18nTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 0A37C4B6A33D4EC3B50A7966 /* RNI18nTests.xctest */; };
 		00615B2C687F4CB9B71BB259 /* libRCTLocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A39F3A908B74294BF386A45 /* libRCTLocale.a */; };
 		D7FDFCD1D8714F7EB6C7BD61 /* libRCTRestart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE403BA0F0A74038A5E59154 /* libRCTRestart.a */; };
+		818696095F814A1593536C0D /* libA0Auth0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B343BAEC34475B6DFE2AA /* libA0Auth0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -379,6 +380,8 @@
 		7A39F3A908B74294BF386A45 /* libRCTLocale.a */ = {isa = PBXFileReference; name = "libRCTLocale.a"; path = "libRCTLocale.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		20EC50F258F0444B937B24A8 /* RCTRestart.xcodeproj */ = {isa = PBXFileReference; name = "RCTRestart.xcodeproj"; path = "../node_modules/react-native-restart/ios/RCTRestart.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		CE403BA0F0A74038A5E59154 /* libRCTRestart.a */ = {isa = PBXFileReference; name = "libRCTRestart.a"; path = "libRCTRestart.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		A6BB809B785748B694C11A5C /* A0Auth0.xcodeproj */ = {isa = PBXFileReference; name = "A0Auth0.xcodeproj"; path = "../node_modules/react-native-auth0/ios/A0Auth0.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		2F0B343BAEC34475B6DFE2AA /* libA0Auth0.a */ = {isa = PBXFileReference; name = "libA0Auth0.a"; path = "libA0Auth0.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +414,7 @@
 				ABC4D9A013354247A494B7FD /* RNI18nTests.xctest in Resources */,
 				00615B2C687F4CB9B71BB259 /* libRCTLocale.a in Frameworks */,
 				D7FDFCD1D8714F7EB6C7BD61 /* libRCTRestart.a in Frameworks */,
+				818696095F814A1593536C0D /* libA0Auth0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +604,7 @@
 				0E5476A907404B92A704ECC9 /* RNI18n.xcodeproj */,
 				1EC9847B7E754193957A1D8A /* RCTLocale.xcodeproj */,
 				20EC50F258F0444B937B24A8 /* RCTRestart.xcodeproj */,
+				A6BB809B785748B694C11A5C /* A0Auth0.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1265,12 +1270,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-locale-detector/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-restart/ios/RCTRestart/**",
+					"$(SRCROOT)/../node_modules/react-native-auth0/ios",
 				);
 			};
 			name = Debug;
@@ -1295,12 +1302,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-locale-detector/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-restart/ios/RCTRestart/**",
+					"$(SRCROOT)/../node_modules/react-native-auth0/ios",
 				);
 			};
 			name = Release;
@@ -1325,6 +1334,7 @@
 					"$(SRCROOT)/../node_modules/react-native-locale-detector/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-restart/ios/RCTRestart/**",
+					"$(SRCROOT)/../node_modules/react-native-auth0/ios",
 				);
 			};
 			name = Debug;
@@ -1348,6 +1358,7 @@
 					"$(SRCROOT)/../node_modules/react-native-locale-detector/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-restart/ios/RCTRestart/**",
+					"$(SRCROOT)/../node_modules/react-native-auth0/ios",
 				);
 			};
 			name = Release;
@@ -1381,12 +1392,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-locale-detector/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-restart/ios/RCTRestart/**",
+					"$(SRCROOT)/../node_modules/react-native-auth0/ios",
 				);
 			};
 			name = Debug;
@@ -1420,12 +1433,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-locale-detector/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-restart/ios/RCTRestart/**",
+					"$(SRCROOT)/../node_modules/react-native-auth0/ios",
 				);
 			};
 			name = Release;
@@ -1458,12 +1473,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-locale-detector/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-restart/ios/RCTRestart/**",
+					"$(SRCROOT)/../node_modules/react-native-auth0/ios",
 				);
 			};
 			name = Debug;
@@ -1496,12 +1513,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-locale-detector/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-restart/ios/RCTRestart/**",
+					"$(SRCROOT)/../node_modules/react-native-auth0/ios",
 				);
 			};
 			name = Release;

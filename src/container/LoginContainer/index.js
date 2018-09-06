@@ -19,6 +19,10 @@ const email = value =>
 const alphaNumeric = value =>
   value && /[^a-zA-Z0-9 ]/i.test(value) ? 'Only alphanumeric characters' : undefined;
 
+import { AuthSession } from 'expo';
+
+const FB_APP_ID = '672636582940821';
+
 class LoginForm extends React.Component {
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
     return (
@@ -40,17 +44,33 @@ class LoginForm extends React.Component {
   }
 
   login() {
-    if (this.props.valid) {
-      this.props.navigation.navigate('Drawer');
-    } else {
-      Toast.show({
-        text: 'Enter Valid Username & password!',
-        duration: 2000,
-        type: 'danger',
-        position: 'bottom',
-        textStyle: { textAlign: 'center' },
-      });
-    }
+    const redirectUrl = AuthSession.getRedirectUrl();
+    console.log(`Redirect URL (add this to Auth0): ${redirectUrl}`);
+    const result = await AuthSession.startAsync({
+      authUrl: `${auth0Domain}/authorize` + toQueryString({
+        client_id: auth0ClientId,
+        response_type: 'token',
+        scope: 'openid name',
+        redirect_uri: redirectUrl,
+      }),
+    });
+
+    // console.log(result);
+    // if (result.type === 'success') {
+    //   this.handleParams(result.params);
+    // }
+
+    // if (this.props.valid) {
+    //   this.props.navigation.navigate('Drawer');
+    // } else {
+    //   Toast.show({
+    //     text: 'Enter Valid Username & password!',
+    //     duration: 2000,
+    //     type: 'danger',
+    //     position: 'bottom',
+    //     textStyle: { textAlign: 'center' },
+    //   });
+    // }
   }
 
   render() {

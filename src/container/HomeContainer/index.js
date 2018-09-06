@@ -32,4 +32,5 @@ const mapStateToProps = state => ({
 
 
 HomeContainer.propTypes = propTypes;
+
 export default connect(mapStateToProps, bindAction)(HomeContainer);

@@ -3,6 +3,7 @@ package com.my-app;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.auth0.react.A0Auth0Package;
 import com.rnrestartandroid.RNRestartAndroidPackage;
 import com.avishayil.rnrestart.ReactNativeRestartPackage;
 import io.fixd.rctlocale.RCTLocalePackage;
@@ -27,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new A0Auth0Package(),
             new RNRestartAndroidPackage(),
             new ReactNativeRestartPackage(),
             new RCTLocalePackage(),
